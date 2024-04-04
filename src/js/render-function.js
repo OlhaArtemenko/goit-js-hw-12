@@ -1,6 +1,4 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-import { listOfGallery, lightbox } from '../main';
+import { listOfGallery, lightbox, loadMoreBtn } from '../main';
 
 export function renderImages(array) {
   if (array.length == 0) {
@@ -31,6 +29,7 @@ export function renderImages(array) {
       })
       .join('');
     listOfGallery.insertAdjacentHTML('beforeend', markup);
+    listOfGallery.insertAdjacentElement('beforeend', loadMoreBtn);
     lightbox.refresh();
   }
 }
